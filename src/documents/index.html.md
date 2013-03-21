@@ -1,6 +1,7 @@
 ---
 layout: 'default'
 title: 'What now?'
+keywords: 'test, test,test,test'
 ---
 
 ## Not sure what to do now? Here's some useful links:
