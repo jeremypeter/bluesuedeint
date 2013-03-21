@@ -1,4 +1,12 @@
 node_modules/
+src/
+docpad.coffee
+grunt-config.json
+grunt.js
+LICENSE.md
+package.json
+Procfile
+README.md
 .DS_Store
 lib-cov
 *.seed
