@@ -37,11 +37,63 @@
         <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
     <![endif]-->
 
-	<header></header>
-	<article>
-		<%- @content %>
-	</article>
-	<footer></footer>
+	<div class="wrapper">
+
+		<aside class="sidebar">
+			<div class="logo"><h2>Blue Suede International</h2></div>
+			<nav class="nav-list">
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="../about/index.html">About</a></li>
+					<li><a href="../services/index.html">Serices</a></li>
+					<li><a href="../projects/index.html">Projects</a></li>
+					<li><a href="../contact/index.html"></a></li>
+				</ul>
+			</nav>
+		</aside>
+
+		<div class="content">
+			
+			<header>
+				<h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis ad.</h1>
+				<h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia quo a perferendis adipisci quisquam nemo architecto necessitatibus repellat nesciunt quos.</h2>
+			</header>
+
+			<div class="slider">
+								
+			</div>
+
+			<div class="service">
+				<img src="" alt="" width="217" height="187">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus laudantium.</p>
+				<button>Learn More</button>
+			</div>
+
+			<div class="service">
+				<img src="" alt="" width="217" height="187">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus laudantium.</p>
+				<button>Learn More</button>
+			</div>
+
+			<div class="service">
+				<img src="" alt="" width="217" height="187">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus laudantium.</p>
+				<button>Learn More</button>
+			</div>
+
+		</div>
+
+	</div> 
+	<!-- end wrapper -->
+	<footer>
+		<span class="copyright">&copy; 2013 Blue Suede International</span>
+		<nav>
+			<a href="">Privacy Policy</a>
+			<a href="">Terms &amp; Conditions</a>
+			<a href="">Contact</a>
+		</nav>
+
+	</footer>
 
 	<!-- DocPad Scripts + Our Own -->
 	<%- @getBlock('scripts').add(@getGruntedScripts()).toHTML() %>
