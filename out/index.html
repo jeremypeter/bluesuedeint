@@ -10,15 +10,15 @@
     <meta name="viewport" content="width=device-width" />
 
     <!-- Site Properities -->
-    <title><%= @getPreparedTitle() %></title>
-    <meta name="description" content="<%= @getPreparedDescription() %>" />
-    <meta name="keywords" content="<%= @getPreparedKeywords() %>" />
+    <title>What now? | Blue Suede International</title>
+    <meta name="description" content="When your website appears in search results in say Google, the text here will be shown underneath your website's title." />
+    <meta name="keywords" content="place, your, website, keywoards, here, keep, them, related, to, the, content, of, your, website, test, test,test,test" />
 
     <!-- DocPad Meta -->
-    <%- @getBlock('meta').toHTML() %>
+    <meta http-equiv="X-Powered-By" content="DocPad"/>
 
     <!-- DocPad Styles + Our Own -->
-    <%- @getBlock('styles').add(@getGruntedStyles()).toHTML() %>
+    <link  rel="stylesheet" href="/styles/all.min.css" />
 
     <!-- Icons -->
     <!-- Favicon -->
@@ -40,7 +40,7 @@
     <div class="wrapper">
 
         <aside class="sidebar">
-            <div class="logo"><h2>Blue Suede International</h2></div>
+            <div class="logo"><h2>Blue Suede International - Merge Worked</h2></div>
             <nav class="nav-list">
                 <ul>
                     <li><a href="index.html">Home</a></li>
@@ -96,6 +96,40 @@
     </footer>
 
     <!-- DocPad Scripts + Our Own -->
-    <%- @getBlock('scripts').add(@getGruntedScripts()).toHTML() %>
+    <script >(function(){
+	// Did we just livereload?
+var log = true && localStorage && console && console.log && true;
+if ( log && localStorage.getItem('/docpad-livereload/reloaded') === 'yes' ) {
+	localStorage.removeItem('/docpad-livereload/reloaded');
+	console.log('LiveReloaded at', new Date())
+}
+
+// Listen for the regenerated event
+// and perform a reload of the page when the event occurs
+var listen = function(){
+	var socket = io.connect('/docpad-livereload');
+	socket.on('regenerated',function(){
+		if ( log ) {
+	localStorage.setItem('/docpad-livereload/reloaded', 'yes');
+}
+document.location.reload();
+	});
+};
+	if ( typeof io !== 'undefined' ) {
+		listen();
+	} else {
+		// Inject socket.io into our page then listen once loaded
+var inject = function(){
+	var t = document.createElement('script');
+	t.type = 'text/javascript';
+	t.async = true;
+	t.src = '/socket.io/socket.io.js';
+	t.onload = listen;
+	var s = document.getElementsByTagName('script')[0];
+	s.parentNode.insertBefore(t,s);
+};
+		inject();
+	}
+})();</script><script defer="defer"  src="/scripts/all.min.js"></script>
 </body>
 </html>
