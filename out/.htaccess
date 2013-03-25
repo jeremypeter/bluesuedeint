@@ -5,7 +5,6 @@
 # config if possible: httpd.apache.org/docs/2.2/howto/htaccess.html
 
 # Change the default index.html to another directory
-DirectoryIndex staging/bluesuedeint/out/index.html
 
 # Techniques in here adapted from all over, including:
 #   Kroc Camen: camendesign.com/.htaccess
