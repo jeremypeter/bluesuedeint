@@ -63,29 +63,31 @@
 								
 			</div>
 
-			<div class="service">
-				<img src="" alt="" width="217" height="187">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus laudantium.</p>
-				<button>Learn More</button>
-			</div>
+			<div class="services">
+				<div class="service">
+					<img src="" alt="" width="217" height="187">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus laudantium.</p>
+					<button class="med-button">Learn More</button>
+				</div>
 
-			<div class="service">
-				<img src="" alt="" width="217" height="187">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus laudantium.</p>
-				<button>Learn More</button>
-			</div>
+				<div class="service">
+					<img src="" alt="" width="217" height="187">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus laudantium.</p>
+					<button class="med-button">Learn More</button>
+				</div>
 
-			<div class="service">
-				<img src="" alt="" width="217" height="187">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus laudantium.</p>
-				<button>Learn More</button>
+				<div class="service">
+					<img src="" alt="" width="217" height="187">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus laudantium.</p>
+					<button class="med-button">Learn More</button>
+				</div>
 			</div>
 
 		</div>
 
 	</div> 
 	<!-- end wrapper -->
-	<footer>
+	<footer class="footer">
 		<span class="copyright">&copy; 2013 Blue Suede International</span>
 		<nav>
 			<a href="">Privacy Policy</a>
