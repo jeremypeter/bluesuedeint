@@ -1,11 +1,52 @@
+/* ---------------------------------------------------------------
+                        BEGIN LESS STYLES
+---------------------------------------------------------------*/
+
 @blue: #009dcf;
-@light-blue: #73ddff;
+@light-blue: #05BBF5;
 @green: #b0b225;
 @dark-gray: #464646;
 @off-white: #dddddd;
 
+@wrapperWidth: 1200px;
+@contentWidth: 840px;
+
+.font-size(@sizeValue){
+  @remValue: (@sizeValue/16);
+  @pxValue: (@sizeValue);
+  font-size: ~"@{pxValue}px"; 
+  font-size: ~"@{remValue}rem";
+}
+
+.serif {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* ---------------------------------------------------------------
+                        BEGIN MAIN STYLES
+---------------------------------------------------------------*/
+
+@font-face {
+  font-family: 'icomoon';
+  src:url('../fonts/icomoon.eot');
+  src:url('../fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.woff') format('woff'),
+    url('../fonts/icomoon.ttf') format('truetype'),
+    url('../fonts/icomoon.svg#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
 * { 
-  box-sizing: border-box; 
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;    
+}
+
+html {
+  font-size: 100%;
+  -webkit-font-smoothing: antialiased;
+  .serif;
 }
 
 html, 
@@ -13,6 +54,32 @@ body {
   height: 100%;
 }
 
+
+a,
+button {
+  -webkit-transition: all .1s ease-in;
+}
+
+img {
+  max-width: 100%;
+}
+
+.wrapper {
+  max-width: @wrapperWidth;
+  width:100%;
+  padding: 0 20px;
+  min-height: 100%;
+}
+
+.wrapper,
+.footer {
+  margin: 0 auto;
+  clear: both;
+}
+
+
+/* =HEADLINE
+---------------------------------------------------------------*/
 .headline:before {
   background-color: @green;
   border-bottom: 4px solid @dark-gray;
@@ -20,7 +87,7 @@ body {
   display: block;
   position: absolute;
   width: 100%;
-  height: 290px;
+  height: 284px;
   z-index: -1;
   left: 0;
 
@@ -28,28 +95,32 @@ body {
 
 .headline{
   background-color: @green;
-  border-bottom: 4px solid @dark-gray;
-  width: 100%;
-  height: 294px;
-  margin: 0 auto;
+  color: #fff;
+  margin-bottom: 23px;
 
   header {
-    max-width: 840px;
-    padding-top: 2rem;
+    padding-top: 2em;
   }
 
   h1 {
     margin-top: 0;
+    .font-size(52);
+    font-weight: 200;
+    margin-bottom: 0.37em;
+  }
+
+  h1 + h2 {
+    .font-size(18);
+  }
+
+  h1, h2 {
+    text-align: center;
+    font-weight: 200;
   }
 }
 
-
-.wrapper {
-  max-width: 1200px;
-  width:100%;
-  padding: 0 20px;
-  min-height: 100%;
-}
+/* =SIDEBAR
+---------------------------------------------------------------*/
 
 .sidebar {
   background-color: #fff;
@@ -80,41 +151,47 @@ body {
 .nav-list {
   position: relative;
 
+  ul {
+    padding: 0;
+  }
+
+  li:first-child a {
+    border-top: 4px solid @blue;
+  }
+
+  a {
+    font-weight: 200;
+    .font-size(20);
+    padding: 20px;
+    display: inline-block;
+    width: 200px;
+    border-bottom: 4px solid @blue;
+    color: @dark-gray;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
   a:hover {
-    background-color: @light-blue;
+    background-color: @blue;
+    color: #fff;
   }
 }
 
-.nav-list a {
-  padding: 20px;
-  display: inline-block;
-  width: 100%;
-  border-bottom: 4px solid @blue;
-  color: @dark-gray;
-  text-transform: uppercase;
-  text-decoration: none;
-}
 
-.nav-list ul {
-  padding: 0;
-}
-
+/* =CONTENT
+---------------------------------------------------------------*/
 .content {
-  max-width: 840px;
+  max-width: @contentWidth;
   float: right; 
   overflow: hidden;
 }
 
-.wrapper,
-.footer {
-  margin: 0 auto;
-  clear: both;
-}
 
-// services
+/* =SERVICES 
+---------------------------------------------------------------*/
+
 .services {
   margin: 0 auto;
-  border: 1px solid;
   overflow: hidden;
 }
 
@@ -125,23 +202,46 @@ body {
   padding: 10px;
   float: left;
   margin: 20px;
-  display: inline-block;
+
+  button {
+    float: right;
+  }
+
+  h2 + p {
+    margin-top: 0;
+  }
+
+  h2 {
+    margin-bottom: 5px;
+    .font-size(20);
+    border-bottom: 1px solid @off-white;
+    padding-bottom: 5px;
+  }
+
 }
 
-.service button { 
-  float: right;
-}
+/* =BUTTONS
+---------------------------------------------------------------*/
 
-.med-button {
-  background-color: @blue;
-  color: white;
+.btn {
   padding: 10px;
   border: none;
 }
 
+.btn-blue {
+  background-color: @blue;
+  color: white;
+}
+
+.btn-blue:hover {
+  background-color: @light-blue;
+}
+
+/* =FOOTER 
+---------------------------------------------------------------*/
 
 .footer {
-  max-width: 1200px;
+  max-width: @wrapperWidth;
   width: 95%;
   height: 90px;
   margin-top: -90px;
@@ -150,7 +250,24 @@ body {
   padding: 10px 20px;
   color: @off-white;
 
-  a {
+  span {
+    display: inline-block;
+    .font-size(12);
+    line-height: 70px;
+  }
+
+  nav {
+    font-family: 'icomoon';
+    float: right;
+    .font-size(42);
+    line-height: 70px;
+  }
+
+  a { 
     color: @off-white;
+  }
+
+  a:hover {
+    color: #fff;
   }
 }
