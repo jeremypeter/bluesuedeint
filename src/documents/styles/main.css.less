@@ -10,6 +10,7 @@
 
 @wrapperWidth: 1200px;
 @mainWidth: 840px;
+@sidebarWidth: 200;
 
 .font-size(@sizeValue){
   @remValue: (@sizeValue/16);
@@ -141,14 +142,15 @@ img {
 
 .sidebar {
   background-color: #fff;
-  margin-right: 20px;
-  position: absolute;
+  margin-right: 20em / 16;
+  float: left;
   top: 0;
+  width: 200% / 1160 * 100;
+  min-width: 180em/16;
 
   .logo {
     background: url('../images/logo-blue-suede.png') 50% -113px no-repeat;
     height: 300px;
-    width: 200px;
     position: relative;
 
     h2 {
@@ -161,7 +163,7 @@ img {
     content: "";
     display: block;
     position: absolute;
-    width: 208px;
+    width: 100% * 1.04;
     height: 730px;
     z-index: -1;
     background: #000;
@@ -185,6 +187,7 @@ img {
 
   ul {
     padding: 0;
+    margin: 0;
   }
 
   li:first-child a {
@@ -195,8 +198,7 @@ img {
     font-weight: 200;
     .font-size(20);
     padding: 10px 20px;
-    display: inline-block;
-    width: 200px;
+    display: block;
     border-bottom: 4px solid @blue;
     color: @dark-gray;
     text-transform: uppercase;
@@ -309,3 +311,99 @@ img {
 
 
 }
+
+/* =MOBILE STYLES 
+---------------------------------------------------------------*/
+
+@media (max-width: 1080px) {
+
+
+/* SIDEBAR */
+
+.sidebar {
+  float: none;
+  width: 100%;
+  overflow: hidden;
+
+  .logo {
+    background-position: 50% -125px;
+    height: 136px;
+    float: left;
+    background-size: 100%;
+
+  }
+
+}
+
+.nav-list {
+  float: right;
+  
+
+  li:first-child a {
+    border-top: none;
+  }
+
+  li {
+    float: left;
+  }
+
+  a {
+    border-bottom: none;
+    border-right: 1px solid #fff;
+    border-left: 1px solid #fff;
+  }
+}
+
+/* MAIN */
+
+.main {
+  float: none;
+  margin: 0 auto;
+}
+  
+
+
+}/* End media query*/
+
+
+
+@media (max-width: 873px) {
+
+  .service {
+    overflow: hidden; 
+    width: auto;
+
+    .thumb {
+      width: 25%;
+      float: left;
+    }
+
+    .description {
+      width: 70%;
+      float: right;
+    }
+  }
+
+}
+
+
+@media (max-width: 480px) {
+
+  .service {
+
+    .thumb {
+      width: auto;
+      float: none;
+    }
+
+    .description {
+      width: auto;
+      float: none;
+    }
+  }
+
+}
+
+
+
+

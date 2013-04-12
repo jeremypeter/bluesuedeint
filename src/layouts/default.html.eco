@@ -67,28 +67,41 @@
 			</div>
 
 			<div class="services">
+
 				<div class="service">
-					<img src="http://www.functionx.com/visualc/views/images/Consulting.bmp" alt="">
-					<h3>Gold</h3>
-					<hr>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus laudantium.</p>
-					<button class="btn btn-blue">Learn More</button>
+					<div class="thumb">
+						<img src="http://www.functionx.com/visualc/views/images/Consulting.bmp" alt="">
+					</div>
+					<div class="description">
+						<h3>Gold</h3>
+						<hr>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus laudantium.</p>
+						<button class="btn btn-blue">Learn More</button>
+					</div>
 				</div>
 
 				<div class="service">
-					<img src="http://www.functionx.com/visualc/views/images/Consulting.bmp" alt="">
-					<h3>Construction</h3>
-					<hr>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus laudantium.</p>
-					<button class="btn btn-blue">Learn More</button>
+					<div class="thumb">
+						<img src="http://www.functionx.com/visualc/views/images/Consulting.bmp" alt="">
+					</div>
+					<div class="description">
+						<h3>Construction</h3>
+						<hr>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus laudantium.</p>
+						<button class="btn btn-blue">Learn More</button>
+					</div>
 				</div>
 
 				<div class="service">
-					<img src="http://www.functionx.com/visualc/views/images/Consulting.bmp" alt="">
-					<h3>In-home Care Giver</h3>
-					<hr>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus laudantium.</p>
-					<button class="btn btn-blue">Learn More</button>
+					<div class="thumb">
+						<img src="http://www.functionx.com/visualc/views/images/Consulting.bmp" alt="">
+					</div>
+					<div class="description">
+						<h3>In-home Care Giver</h3>
+						<hr>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus laudantium.</p>
+						<button class="btn btn-blue">Learn More</button>
+					</div>
 				</div>
 			</div>
 			<!-- end services -->
