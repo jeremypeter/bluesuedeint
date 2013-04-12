@@ -18,7 +18,7 @@
     <meta http-equiv="X-Powered-By" content="DocPad"/>
 
     <!-- DocPad Styles + Our Own -->
-    <link  rel="stylesheet" href="/styles/all.min.css" />
+    <link  rel="stylesheet" href="styles/all.min.css" />
 
     <!-- Icons -->
     <!-- Favicon -->
@@ -40,62 +40,155 @@
     <div class="wrapper">
 
         <aside class="sidebar">
-            <div class="logo"><h2>Blue sSuede International It works!!!!</h2></div>
+            <div class="logo"><h2>Blue sSuede International - Staging is working now broski</h2></div>
             <nav class="nav-list">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="../about/index.html">About</a></li>
-                    <li><a href="../services/index.html">Serices</a></li>
+                    <li><a class="active" href="../services/index.html">Services</a></li>
                     <li><a href="../projects/index.html">Projects</a></li>
-                    <li><a href="../contact/index.html"></a></li>
+                    <li><a href="../contact/index.html">Contact</a></li>
                 </ul>
             </nav>
         </aside>
 
-        <div class="content">
-            
-            <header>
-                <h1>Lorem ipsumf dolor sit amet, consectetur adipisicing elit. Blanditiis ad.</h1>
-                <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia quo a perferendis adipisci quisquam nemo architecto necessitatibus repellat nesciunt quos.</h2>
-            </header>
+        <div class="main">
 
+            <div class="headline">
+                <header>
+                    <h1>Lorem ipsumf dolor sit amet, consectetur adipisicing elit. Blanditiis.</h1>
+                    <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia quo a perferendis adipisci quisquam nemo architecto necessitatibus repellat nesciunt quos.</h2>
+                </header>
+            </div>
+            <!-- end headline -->
+            
             <div class="slider">
                                 
             </div>
 
-            <div class="service">
-                <img src="" alt="" width="217" height="187">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus laudantium.</p>
-                <button>Learn More</button>
+            <div class="services">
+
+                <div class="service">
+                    <div class="thumb">
+                        <img src="http://www.functionx.com/visualc/views/images/Consulting.bmp" alt="">
+                    </div>
+                    <div class="description">
+                        <h3>Gold</h3>
+                        <hr>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus laudantium.</p>
+                        <button class="btn btn-blue">Learn More</button>
+                    </div>
+                </div>
+
+                <div class="service">
+                    <div class="thumb">
+                        <img src="http://www.functionx.com/visualc/views/images/Consulting.bmp" alt="">
+                    </div>
+                    <div class="description">
+                        <h3>Construction</h3>
+                        <hr>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus laudantium.</p>
+                        <button class="btn btn-blue">Learn More</button>
+                    </div>
+                </div>
+
+                <div class="service">
+                    <div class="thumb">
+                        <img src="http://www.functionx.com/visualc/views/images/Consulting.bmp" alt="">
+                    </div>
+                    <div class="description">
+                        <h3>In-home Care Giver</h3>
+                        <hr>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus laudantium.</p>
+                        <button class="btn btn-blue">Learn More</button>
+                    </div>
+                </div>
+            </div>
+            <!-- end services -->
+
+            <div class="projects">
+                <div class="project">
+                    
+                </div>
             </div>
 
-            <div class="service">
-                <img src="" alt="" width="217" height="187">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus laudantium.</p>
-                <button>Learn More</button>
-            </div>
 
-            <div class="service">
-                <img src="" alt="" width="217" height="187">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus laudantium.</p>
-                <button>Learn More</button>
-            </div>
+            <form class="form" name="contact" method="POST" action="">
+                <label for="name">Name</label>
+                <input type="text" name="name"  id="name" placeholder="John Smith">
+
+                <label for="email" >E-mail</label>
+                <input type="email" id="email" placeholder="you@youremail.com">
+
+                <label for="message">Message:</label>
+        <textarea name="message" id="message" cols="40" rows="6" required ></textarea>
+
+                <button class="btn" type="submit">Submit</button>
+            </form>
 
         </div>
 
     </div> 
     <!-- end wrapper -->
-    <footer>
+    <footer class="footer">
         <span class="copyright">&copy; 2013 Blue Suede International</span>
         <nav>
-            <a href="">Privacy Policy</a>
-            <a href="">Terms &amp; Conditions</a>
-            <a href="">Contact</a>
+            <a href="">l</a>
+            <a href="">f</a>
         </nav>
 
     </footer>
 
     <!-- DocPad Scripts + Our Own -->
-    <script defer="defer"  src="/scripts/all.min.js"></script>
+    
+    <script >(function(){
+	// Did we just livereload?
+var log = true && localStorage && console && console.log && true;
+if ( log && localStorage.getItem('/docpad-livereload/reloaded') === 'yes' ) {
+	localStorage.removeItem('/docpad-livereload/reloaded');
+	console.log('LiveReloaded at', new Date())
+}
+
+// Listen for the regenerated event
+// and perform a reload of the page when the event occurs
+var listen = function(){
+	var socket = io.connect('/docpad-livereload');
+	socket.on('regenerated',function(){
+		if ( log ) {
+	localStorage.setItem('/docpad-livereload/reloaded', 'yes');
+}
+document.location.reload();
+	});
+};
+	if ( typeof io !== 'undefined' ) {
+		listen();
+	} else {
+		// Inject socket.io into our page then listen once loaded
+var inject = function(){
+	var t = document.createElement('script');
+	t.type = 'text/javascript';
+	t.async = true;
+	t.src = '/socket.io/socket.io.js';
+	t.onload = listen;
+	var s = document.getElementsByTagName('script')[0];
+	s.parentNode.insertBefore(t,s);
+};
+		inject();
+	}
+})();</script><script defer="defer"  src="/scripts/all.min.js"></script>
+
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-39550923-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
 </body>
 </html>
