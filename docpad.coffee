@@ -2,6 +2,10 @@
 # It is simply a CoffeeScript Object which is parsed by CSON
 docpadConfig = {
 
+	collections: 
+		pages: ->
+			@getCollection('html').findAllLive({isPage: true})
+
 	# =================================
 	# Template Data
 	# These are variables that will be accessible via our templates

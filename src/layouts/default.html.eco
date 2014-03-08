@@ -32,111 +32,45 @@
 	<!-- For third-generation iPad with high-resolution Retina display: -->
 	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="icons/apple-touch-icon-144x144-precomposed.png" />
 </head>
-<body>
-    <!--[if lt IE 7]>
-        <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
-    <![endif]-->
+<body class="<%= @document.bodyClass %>">
+   
+	<aside class="sidebar">
+		<img class="logo" src="../images/logo-blue-suede.png" alt="Blue Suede International">
+
+		<!-- <nav class="main-nav">
+			<a class="active" href="index.html">Home</a>
+			<a href="./about/index.html">About</a>
+			<a href="services/index.html">Services</a>
+			<a href="contact/index.html">Contact</a>
+		</nav> -->
+
+		<nav class="main-nav">
+			<% for page in @getCollection('pages').toJSON(): %>
+			<a class="<%= if page.id is @document.id then 'active' else '' %>" href="<%= page.url %>">
+				<%= page.title %>
+			</a>
+			<% end %>
+		</nav>
+		
+		<div class="footer">
+			<p class="upper">Get social with us</p>
+
+			<div class="social">
+				<a href="http://www.facebook.com/415523205221169">f</a>
+				<a href="#">l</a>
+			</div>
+
+			<p class="footnote">© 2014 Blue Suede International</p>
+		</div>
+	</aside>
 
 	<div class="wrapper">
+		<%- @content %>
+		
+	</div>
 
-		<aside class="sidebar">
-			<div class="logo"><h2>Blue sSuede International - Staging is working now broski</h2></div>
-			<nav class="nav-list">
-				<ul>
-					<li><a href="index.html">Home</a></li>
-					<li><a href="../about/index.html">About</a></li>
-					<li><a class="active" href="../services/index.html">Services</a></li>
-					<li><a href="../contact/index.html">Contact</a></li>
-				</ul>
-			</nav>
-		</aside>
-
-		<div class="main">
-
-			<div class="headline">
-				<header>
-					<h1>Lorem ipsumf dolor sit amet, consectetur adipisicing elit. Blanditiis.</h1>
-					<h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia quo a perferendis adipisci quisquam nemo architecto necessitatibus repellat nesciunt quos.</h2>
-				</header>
-			</div>
-			<!-- end headline -->
-			
-			<div class="slider">
-								
-			</div>
-
-			<div class="services">
-
-				<div class="service">
-					<div class="thumb">
-						<img src="http://www.functionx.com/visualc/views/images/Consulting.bmp" alt="">
-					</div>
-					<div class="description">
-						<h3>Gold</h3>
-						<hr>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus laudantium.</p>
-						<button class="btn btn-blue">Learn More</button>
-					</div>
-				</div>
-
-				<div class="service">
-					<div class="thumb">
-						<img src="http://www.functionx.com/visualc/views/images/Consulting.bmp" alt="">
-					</div>
-					<div class="description">
-						<h3>Construction</h3>
-						<hr>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus laudantium.</p>
-						<button class="btn btn-blue">Learn More</button>
-					</div>
-				</div>
-
-				<div class="service">
-					<div class="thumb">
-						<img src="http://www.functionx.com/visualc/views/images/Consulting.bmp" alt="">
-					</div>
-					<div class="description">
-						<h3>In-home Care Giver</h3>
-						<hr>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus laudantium.</p>
-						<button class="btn btn-blue">Learn More</button>
-					</div>
-				</div>
-			</div>
-			<!-- end services -->
-
-			<div class="projects">
-				<div class="project">
-					
-				</div>
-			</div>
-
-
-			<form class="form" name="contact" method="POST" action="">
-				<label for="name">Name</label>
-				<input type="text" name="name"  id="name" placeholder="John Smith">
-
-				<label for="email" >E-mail</label>
-				<input type="email" id="email" placeholder="you@youremail.com">
-
-				<label for="message">Message:</label>
-        <textarea name="message" id="message" cols="40" rows="6" required ></textarea>
-
-				<button class="btn" type="submit">Submit</button>
-			</form>
-
-		</div>
-
-	</div> 
-	<!-- end wrapper -->
-	<footer class="footer">
-		<span class="copyright">&copy; 2013 Blue Suede International</span>
-		<nav>
-			<a href="">l</a>
-			<a href="">f</a>
-		</nav>
-
-	</footer>
+	</div>
+	<span></span>
 
 	<!-- DocPad Scripts + Our Own -->
 	
