@@ -109,7 +109,19 @@ h2 {
   padding: 2rem;
   text-align: center;
   background: #fff;
+
+  @media screen and (max-height:800px) {
+    .footer { 
+      position: relative;
+      padding: 0;
+      border-top: 1px solid @med-gray;
+    }
+
+  }
+  
 }
+
+
 
 .logo {
   margin-top: -12rem;
@@ -160,6 +172,7 @@ h2 {
   width: 80%;
   float: right;
   padding: 0 (124/1200)*100% 0 (124/1200)*100%;
+  margin-bottom: (20/1200)*100%;
 }
 
 .headline {
@@ -215,7 +228,7 @@ h2 {
 }
 
 .lg-text {
-  .font-size(54);
+  .font-size(45);
 }
 
 .lead {
@@ -255,8 +268,12 @@ label {
 }
 
 input {
-  height: 40px;
-  padding: 10px;
+  height: 4rem;
+  padding: 1rem;
+}
+
+textarea {
+  padding: 1rem;
 }
 
 input,
@@ -268,12 +285,28 @@ label + input {
   margin: 0 0 30px 0;
 }
 
-button[type='Submit'] {
+#form1 ul { list-style: none; }
+#form1 header { display: none; }
+#form1 li { margin-bottom: 2rem; }
+.name input { display: inline;}
+.name span { 
+  display: inline-block; 
+  width: 49%;
+}
+.name span label { 
+  .font-size(12); 
+  font-weight: 900;  
+  font-style: italic;
+  color: #ccc;
+}
+
+input[type='submit'] {
   display: block;
   background: #009dcf;
   border: none;
   padding: 15px 20px;
   color: #fff;
+  width: auto;
   text-transform: uppercase;
   font-weight: 200;
   margin-top: 20px;
