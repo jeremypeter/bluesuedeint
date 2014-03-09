@@ -71,6 +71,9 @@ body:after {
 
 .wrapper {
   min-height: 100%;
+  @media screen and (max-width: 790px) {
+    padding: 1rem;
+  }
 }
 
 p {
@@ -110,6 +113,30 @@ h2 {
   text-align: center;
   background: #fff;
 
+  @media screen and (max-width: 790px) {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+
+    .main-nav {
+      position: relative;
+      background: white;
+    }
+
+    .footer {
+      display: none;
+    }
+
+    .logo {
+      height: 250px;
+      margin-top: -16rem;
+      overflow: hidden;
+      margin-bottom: 0;
+      
+    }
+  }
+
   @media screen and (max-height:800px) {
     .footer { 
       position: relative;
@@ -138,7 +165,13 @@ h2 {
     text-transform: uppercase;
     font-weight: 200;
     .font-size(20);
+
+    @media screen and (max-width: 790px) {
+      background-color: @blue;
+      color: @white;
+    }
   }
+
 
   .active,
   a:hover {
@@ -173,10 +206,20 @@ h2 {
   float: right;
   padding: 0 (124/1200)*100% 0 (124/1200)*100%;
   margin-bottom: (20/1200)*100%;
+
+  @media screen and (max-width: 790px) {
+    width: 100%;
+    float: none;
+    position: relative;
+    padding: 0;
+  }
 }
 
 .headline {
   margin-bottom: (60/1200)*100%;
+  @media screen and (max-width: 790px) {
+    margin-bottom: 15%;
+  }
 }
 
 .bg-green { background-color: @green; }
@@ -188,13 +231,17 @@ h2 {
 }
 
 .header {
-  padding: 6rem 0;
+  height: 192px;
   position: relative;
 
   h1 {
     margin: 0;
     text-transform: uppercase;
     color: @white;
+    position: absolute;
+    bottom: -30px;
+    right: 0;
+    .font-size(65);
 
     span {
       display: block;
@@ -213,6 +260,24 @@ h2 {
     border-top: 35px solid @green;
     bottom: -35px;
     left: -50px;
+  }
+
+  @media screen and (max-width: 790px) {
+    
+    height: 100px;
+
+    h1 { 
+      position: relative;
+      text-align: center;
+      .font-size(50);
+    }
+
+    &:after {
+      border-left-width: 100%;
+      border-right-width: 100%;
+      left: 9px;
+    }
+
   }
 }
 
@@ -233,8 +298,23 @@ h2 {
 
 .lead {
   .font-size(27);
+  @media screen and (max-width: 790px) {
+    .font-size(20);
+    font-weight: 900;
+  }
 }
 
+
+.head span {
+  display: block;
+  text-transform: uppercase;
+  line-height: 1;
+  font-weight: 600;
+}
+
+.head span:first-child {
+  margin-top: 2rem;
+}
 
 /*----------------- 
 =FORM
@@ -243,11 +323,18 @@ h2 {
 .contact-info-main {
   width: 40%;
   .font-size(16);
+  @media screen and (max-width: 790px) {
+    width: 100%;
+  }
 }
 
 .form {
   width: 50%;
   margin-right: 40px;
+  @media screen and (max-width: 790px) {
+    width: 100%;
+    margin-right: auto;
+  }
 }
 
 #form.wufoo .li.focused {

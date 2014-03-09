@@ -35,7 +35,9 @@
 <body class="<%= @document.bodyClass %>">
    
 	<aside class="sidebar">
-		<img class="logo" src="../images/logo-blue-suede.png" alt="Blue Suede International">
+		<div class="logo">
+			<img src="../images/logo-blue-suede.png" alt="Blue Suede International">
+		</div>
 
 		<!-- <nav class="main-nav">
 			<a class="active" href="index.html">Home</a>
