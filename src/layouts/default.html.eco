@@ -33,10 +33,29 @@
 	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="icons/apple-touch-icon-144x144-precomposed.png" />
 </head>
 <body class="<%= @document.bodyClass %>">
+
+	<div id="fb-root"></div>
+<script>
+
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=686131051427973";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+
+window.fbAsyncInit = function(){
+	FB.api('/me', {access_token: 'CAACEdEose0cBAF5XQmHwZBBxsFpG00WFyStUo5HHiqRii4BK76Imq3pZAMIis0jMLFq58B0id4eBsYhXHxqMbgGbkGipBliv1ZAWiZBjcz55n5jwzxQZBZAC9ehQ7PvsNa1ZAMa3MLGHbMW3xny1d83ZBRp4CZCnZCW4RunVYziVuK2mKZBTd7E0CqAOUE89eXZBBZA4ZD'} ,function(response){
+		console.log(response);
+	});
+}
+
+</script>
    
 	<aside class="sidebar">
 		<div class="logo">
-			<img src="../images/logo-blue-suede.png" alt="Blue Suede International">
+			<!-- <img src="../images/logo-blue-suede.png" alt="Blue Suede International"> -->
 		</div>
 
 		<!-- <nav class="main-nav">
@@ -53,6 +72,7 @@
 			</a>
 			<% end %>
 		</nav>
+
 		
 		<div class="footer">
 			<p class="upper">Get social with us</p>
@@ -68,11 +88,9 @@
 
 	<div class="wrapper">
 		<%- @content %>
-		
 	</div>
 
 	</div>
-	<span></span>
 
 	<!-- DocPad Scripts + Our Own -->
 	
