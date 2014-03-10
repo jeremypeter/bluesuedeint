@@ -33,10 +33,29 @@
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="icons/apple-touch-icon-144x144-precomposed.png" />
 </head>
 <body class="about">
+
+    <div id="fb-root"></div>
+<script>
+
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=686131051427973";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+
+window.fbAsyncInit = function(){
+    FB.api('/me', {access_token: 'CAACEdEose0cBAF5XQmHwZBBxsFpG00WFyStUo5HHiqRii4BK76Imq3pZAMIis0jMLFq58B0id4eBsYhXHxqMbgGbkGipBliv1ZAWiZBjcz55n5jwzxQZBZAC9ehQ7PvsNa1ZAMa3MLGHbMW3xny1d83ZBRp4CZCnZCW4RunVYziVuK2mKZBTd7E0CqAOUE89eXZBBZA4ZD'} ,function(response){
+        console.log(response);
+    });
+}
+
+</script>
    
     <aside class="sidebar">
         <div class="logo">
-            <img src="../images/logo-blue-suede.png" alt="Blue Suede International">
+            <!-- <img src="../images/logo-blue-suede.png" alt="Blue Suede International"> -->
         </div>
 
         <!-- <nav class="main-nav">
@@ -52,10 +71,6 @@
                 Home
             </a>
             
-            <a class="active" href="/about/index.html">
-                About
-            </a>
-            
             <a class="" href="/contact/index.html">
                 Contact
             </a>
@@ -64,7 +79,12 @@
                 Services
             </a>
             
+            <a class="active" href="/about/index.html">
+                About
+            </a>
+            
         </nav>
+
         
         <div class="footer">
             <p class="upper">Get social with us</p>
@@ -96,49 +116,13 @@
 
   </div>
 </div>
-        
     </div>
 
     </div>
-    <span></span>
 
     <!-- DocPad Scripts + Our Own -->
     
-    <script >(function(){
-	// Did we just livereload?
-var log = true && localStorage && console && console.log && true;
-if ( log && localStorage.getItem('/docpad-livereload/reloaded') === 'yes' ) {
-	localStorage.removeItem('/docpad-livereload/reloaded');
-	console.log('LiveReloaded at', new Date())
-}
-
-// Listen for the regenerated event
-// and perform a reload of the page when the event occurs
-var listen = function(){
-	var socket = io.connect('/docpad-livereload');
-	socket.on('regenerated',function(){
-		if ( log ) {
-	localStorage.setItem('/docpad-livereload/reloaded', 'yes');
-}
-document.location.reload();
-	});
-};
-	if ( typeof io !== 'undefined' ) {
-		listen();
-	} else {
-		// Inject socket.io into our page then listen once loaded
-var inject = function(){
-	var t = document.createElement('script');
-	t.type = 'text/javascript';
-	t.async = true;
-	t.src = '/socket.io/socket.io.js';
-	t.onload = listen;
-	var s = document.getElementsByTagName('script')[0];
-	s.parentNode.insertBefore(t,s);
-};
-		inject();
-	}
-})();</script><script defer="defer"  src="/scripts/all.min.js"></script>
+    <script defer="defer"  src="/scripts/all.min.js"></script>
 
     <script type="text/javascript">
 
